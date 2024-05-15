@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="Added or created Instances">
-      <change afterPath="$PROJECT_DIR$/StudentProject/articles.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StudentProject/billMaker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StudentProject/planning.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added classes and prepare a basic hotel booking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotels.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -61,7 +57,7 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="billMaker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HotelBookingApp" />
       <option name="ENV_FILES" value="" />
@@ -167,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715754780543</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added classes and prepare a basic hotel booking">
+      <option name="closed" value="true" />
+      <created>1715782315931</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715782315931</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -175,6 +179,7 @@
     <MESSAGE value="Add" />
     <MESSAGE value="first commit" />
     <MESSAGE value="Added or created Instances" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added or created Instances" />
+    <MESSAGE value="added classes and prepare a basic hotel booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="added classes and prepare a basic hotel booking" />
   </component>
 </project>
