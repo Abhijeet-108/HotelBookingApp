@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added card features and security card feature in app">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added card features and security card feature in app and more feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,21 +22,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Abhijeet-108"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Abhijeet-108&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Abhijeet-108/HotelBookingApp.git",
-    "accountId": "1c4e72c6-9181-4f83-a8e1-9c44b63ca035"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Abhijeet-108/HotelBookingApp.git&quot;,
+    &quot;accountId&quot;: &quot;1c4e72c6-9181-4f83-a8e1-9c44b63ca035&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2gUUudDdtgvqgwvq0csEfiDDteP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,7 +52,8 @@
     "Python.main.executor": "Run",
     "Python.pdfgen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Python/mega-course-app12-super-mario-game"
   }
 }]]></component>
   <component name="RunManager" selected="Python.main">
@@ -179,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715796492484</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added card features and security card feature in app and more feature">
+      <option name="closed" value="true" />
+      <created>1715799337918</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715799337918</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -189,6 +196,7 @@
     <MESSAGE value="Added or created Instances" />
     <MESSAGE value="added classes and prepare a basic hotel booking" />
     <MESSAGE value="added card features and security card feature in app" />
-    <option name="LAST_COMMIT_MESSAGE" value="added card features and security card feature in app" />
+    <MESSAGE value="added card features and security card feature in app and more feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="added card features and security card feature in app and more feature" />
   </component>
 </project>
