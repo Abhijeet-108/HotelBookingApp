@@ -1,10 +1,13 @@
-import pandas
+import pandas as pd
 from datetime import datetime
 
-hotelList = pandas.read_csv("hotels.csv")
-card = pandas.read_csv("cards.csv").to_dict(orient="records")
-card_security = pandas.read_csv("card_security.csv")
+# Read CSV files
+hotelList = pd.read_csv("hotels.csv")
+card = pd.read_csv("cards.csv").to_dict(orient="records")
+card_security = pd.read_csv("card_security.csv")
 
+
+# Hotel class definition
 class Hotel:
     def __init__(self, hotel_id):
         self.hotel_id = hotel_id
@@ -33,6 +36,7 @@ class Hotel:
             return False
 
 
+# ReservationTicket class definition
 class ReservationTicket:
     def __init__(self, customer_name, hotel_object):
         self.customer_name = customer_name
@@ -41,48 +45,54 @@ class ReservationTicket:
     def generate(self):
         now = datetime.now().strftime("%d-%m-%y  %H.%M.%S")
         content = f"""
-        Thank you for your resevation!!
-        Here are your booking data:
+        Thank you for your reservation!!
+        Here are your booking details:
         {now}
         Name: {self.customer_name}
-        HotelName: {self.hotel.name}
+        Hotel Name: {self.hotel.name}
         """
         return content
 
+
+# SpaReservationTicket class definition
 class SpaReservationTicket:
     def __init__(self, customer_name, hotel_object):
-        self.customer_names = customer_name
-        self.hotels = hotel_object
+        self.customer_name = customer_name
+        self.hotel = hotel_object
 
-    def generateTicket(self):
+    def generate_ticket(self):
         now = datetime.now().strftime("%d-%m-%y  %H.%M.%S")
         content = f"""
-                Thank you for your resevation!!
-                Here are your booking data:
-                {now}
-                Name: {self.customer_names}
-                HotelName: {self.hotels.name}
-                """
+        Thank you for your spa reservation!!
+        Here are your booking details:
+        {now}
+        Name: {self.customer_name}
+        Hotel Name: {self.hotel.name}
+        """
         return content
 
 
-class CredictCard:
+# CreditCard class definition
+class CreditCard:
     def __init__(self, number):
         self.number = number
 
     def validate(self, expiration, holder, cvc):
-        card_data = {"number": self.number, "expiration": expiration,
-                     "holder": holder, "cvc": cvc}
-        if card_data in card:
-            return True
-        else:
-            return False
+        card_data = {"number": self.number, "expiration": expiration, "holder": holder, "cvc": cvc}
+        for card_info in card:
+            if (card_info["number"] == self.number and
+                    card_info["expiration"] == expiration and
+                    card_info["holder"] == holder and
+                    card_info["cvc"] == cvc):
+                return True
+        return False
 
     def pay(self):
         pass
 
 
-class SecureCreditCard(CredictCard):
+# SecureCreditCard class definition
+class SecureCreditCard(CreditCard):
     def authenticate(self, given_password):
         password = card_security.loc[card_security["number"] == self.number, "password"].squeeze()
         if password == given_password:
@@ -91,21 +101,23 @@ class SecureCreditCard(CredictCard):
             return False
 
 
-print("Namaste!! Welcome to ours Hotel booking App....")
+# Main code
+print("Namaste!! Welcome to our Hotel Booking App....")
 print(hotelList)
-hotel_ID = int(input("Enter the id of Hotel:  "))
+hotel_ID = int(input("Enter the id of the Hotel: "))
 hotel = Hotel(hotel_ID)
 
 if hotel.available():
-    further = input("Do you pay the rent: ").lower()
+    further = input("Do you want to pay the rent: ").lower()
     if further == "yes":
         card_number = int(input("Enter your Credit card number: "))
-        expire_date = input("Enter card expire date: ")
+        expire_date = input("Enter card expiry date (MM/YY): ")
         holder_name = input("Enter the card holder name: ")
-        cvv_number = int(input("Enter the cvv number: "))
+        cvv_number = int(input("Enter the CVV number: "))
         credit_card = SecureCreditCard(number=card_number)
         if credit_card.validate(expiration=expire_date, holder=holder_name, cvc=cvv_number):
-            if credit_card.authenticate(given_password="mypass"):
+            given_password = input("Enter your card password: ")
+            if credit_card.authenticate(given_password=given_password):
                 hotel.book()
                 name = input("Enter your Name: ")
                 reservation = ReservationTicket(customer_name=name, hotel_object=hotel)
@@ -114,17 +126,15 @@ if hotel.available():
                 spa = input("Do you want to book a spa package? ").lower()
                 if spa == "yes":
                     spa_reservation = SpaReservationTicket(customer_name=name, hotel_object=hotel)
-                    print(spa_reservation.generateTicket())
+                    print(spa_reservation.generate_ticket())
             else:
                 print("Credit card authentication failed.")
         else:
             print("Problem with your payment card")
     else:
-        print("Something problem in the payment server.., Go back and pay again")
-
+        print("Payment process was not completed. Please try again.")
 else:
-    print("Hotel is not free..")
+    print("Hotel is not available.")
 
 print("\n\n_____________________________________________________")
-
 print("\nDanyawad!! Visit again....")
