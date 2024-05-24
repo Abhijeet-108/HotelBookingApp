@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added card features and security card feature in app and more feature">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added card features and security card feature in app and more feature" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +51,7 @@
     "Python.pdfgen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Python/mega-course-app12-super-mario-game"
+    "last_opened_file_path": "D:/Python/HotelBookingApp"
   }
 }]]></component>
   <component name="RunManager" selected="Python.main">
@@ -186,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715799337918</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added card features and security card feature in app and more feature">
+      <option name="closed" value="true" />
+      <created>1715914368774</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715914368774</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
