@@ -1,6 +1,6 @@
 id,name,city,capacity,available,price
-134,Tourist Sunny Apartment,Anchorage,5,yes,14500
+134,Tourist Sunny Apartment,Anchorage,4,yes,14500
 150,Royal Tiger,Munger,5,yes,15000
-188,Snow Palace,New Delhi,5,yes,20000
+188,Snow Palace,New Delhi,4,yes,20000
 655,City Break Inn,Porto-Novo,3,yes,10000
-555,Taj Hotel,Kolkata,4,yes,25000
+555,Taj Hotel,Kolkata,3,yes,25000

@@ -102,15 +102,15 @@ class SecureCreditCard(CreditCard):
 
 
 # Main code
-print("Namaste!! Welcome to our Hotel Booking App....")
+print("           Namaste!! Welcome to our Hotel Booking App           \n")
 print(hotelList)
-hotel_ID = int(input("Enter the id of the Hotel: "))
+hotel_ID = int(input("\nEnter the id of the Hotel: "))
 hotel = Hotel(hotel_ID)
 
 if hotel.available():
-    further = input("Do you want to pay the rent: ").lower()
-    if further == "yes":
-        card_number = int(input("Enter your Credit card number: "))
+    further = input("\nDo you want to pay the rent(y/n): ").lower()
+    if further == "y":
+        card_number = int(input("\nEnter your Credit card number: "))
         expire_date = input("Enter card expiry date (MM/YY): ")
         holder_name = input("Enter the card holder name: ")
         cvv_number = int(input("Enter the CVV number: "))
@@ -137,4 +137,5 @@ else:
     print("Hotel is not available.")
 
 print("\n\n_____________________________________________________")
+
 print("\nDanyawad!! Visit again....")
