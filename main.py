@@ -56,7 +56,7 @@ class ReservationTicket:
         
         Here are your booking details:
         
-        Hotel Name: {self.hotel.name} | Price: {self.hotel.price} | GST charge: 18 % | Price(Inclusive TAX.): {current_price}
+        Hotel Name: {self.hotel.name} | Price:  ₹{self.hotel.price}/- | GST charge: 18 % | Price(Inclusive TAX.):  ₹{current_price}/-
         
         """
         return content
