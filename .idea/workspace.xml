@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="improvment in a code,&#10;i) improve the card security csv file&#10;ii) improve the spaces in a code so that it look impressive">
+    <list default="true" id="83a04459-cdec-4f90-8638-f22422675da1" name="Changes" comment="added the amount deducted feature from a cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cards.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotels.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.csv" afterDir="false" />
@@ -221,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716557164652</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added the amount deducted feature from a cards">
+      <option name="closed" value="true" />
+      <created>1716610812128</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716610812128</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -234,6 +242,7 @@
     <MESSAGE value="added card features and security card feature in app and more feature" />
     <MESSAGE value="improve some error of validate" />
     <MESSAGE value="improvment in a code,&#10;i) improve the card security csv file&#10;ii) improve the spaces in a code so that it look impressive" />
-    <option name="LAST_COMMIT_MESSAGE" value="improvment in a code,&#10;i) improve the card security csv file&#10;ii) improve the spaces in a code so that it look impressive" />
+    <MESSAGE value="added the amount deducted feature from a cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the amount deducted feature from a cards" />
   </component>
 </project>

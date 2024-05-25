@@ -42,14 +42,21 @@ class ReservationTicket:
         self.hotel = hotel_object
 
     def generate(self):
-        now = datetime.now().strftime("%d-%m-%y  %H.%M.%S")
-        content = f"""
+        now = datetime.now().strftime("%d-%m-%y     %H.%M.%S")
+        phn_number = int(input("Enter your Phone Number: "))
+        current_price = self.hotel.price + (self.hotel.price*18)/100
+        content = f"""\n
+                      INVOICE
+                HOTEL BOOKING APP
+                (mb78 Ak23 2155587)  
+        \n             {now}              \n
         Thank you for your reservation!!
+        
+        Name: {self.customer_name}                Mobile Number: {phn_number}
+        
         Here are your booking details:
-        {now}
-        Name: {self.customer_name}
-        Hotel Name: {self.hotel.name}
-        Price: {self.hotel.price}
+        
+        Hotel Name: {self.hotel.name} | Price: {self.hotel.price} | GST charge: 18 % | Price(Inclusive TAX.): {current_price}
         
         """
         return content
