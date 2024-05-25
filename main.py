@@ -3,6 +3,7 @@ from datetime import datetime
 
 # Read CSV files
 hotelList = pd.read_csv("hotels.csv")
+cards = pd.read_csv("cards.csv")
 card = pd.read_csv("cards.csv").to_dict(orient="records")
 card_security = pd.read_csv("card_security.csv")
 
@@ -12,6 +13,7 @@ class Hotel:
     def __init__(self, hotel_id):
         self.hotel_id = hotel_id
         self.name = hotelList.loc[hotelList["id"] == self.hotel_id, "name"].squeeze()
+        self.price = hotelList.loc[hotelList["id"] == self.hotel_id, "price"].squeeze()
 
     def book(self):
         try:
@@ -30,10 +32,7 @@ class Hotel:
 
     def available(self):
         availability = hotelList.loc[hotelList["id"] == self.hotel_id, "available"].squeeze()
-        if availability == "yes":
-            return True
-        else:
-            return False
+        return availability == "yes"
 
 
 # ReservationTicket class definition
@@ -50,6 +49,8 @@ class ReservationTicket:
         {now}
         Name: {self.customer_name}
         Hotel Name: {self.hotel.name}
+        Price: {self.hotel.price}
+        
         """
         return content
 
@@ -61,6 +62,7 @@ class SpaReservationTicket:
         self.hotel = hotel_object
 
     def generate_ticket(self):
+        print()
         now = datetime.now().strftime("%d-%m-%y  %H.%M.%S")
         content = f"""
         Thank you for your spa reservation!!
@@ -87,18 +89,24 @@ class CreditCard:
                 return True
         return False
 
-    def pay(self):
-        pass
+    def pay(self, amount):
+        for card_info in card:
+            if card_info["number"] == self.number:
+                if card_info["amount"] >= amount:
+                    card_info["amount"] -= (amount + ((amount * 18) / 100))
+                    cards_df = pd.DataFrame(card)
+                    cards_df.to_csv("cards.csv", index=False)
+                    return True
+                else:
+                    print("!! Transaction Unsuccessful !!")
+        return False
 
 
 # SecureCreditCard class definition
 class SecureCreditCard(CreditCard):
     def authenticate(self, given_password):
         password = card_security.loc[card_security["number"] == self.number, "password"].squeeze()
-        if password == given_password:
-            return True
-        else:
-            return False
+        return password == given_password
 
 
 # Main code
@@ -118,15 +126,18 @@ if hotel.available():
         if credit_card.validate(expiration=expire_date, holder=holder_name, cvc=cvv_number):
             given_password = input("Enter your card password: ")
             if credit_card.authenticate(given_password=given_password):
-                hotel.book()
-                name = input("Enter your Name: ")
-                reservation = ReservationTicket(customer_name=name, hotel_object=hotel)
-                print(reservation.generate())
-                print(f"Thanks for choosing our hotel {hotel.name}")
-                spa = input("Do you want to book a spa package? ").lower()
-                if spa == "yes":
-                    spa_reservation = SpaReservationTicket(customer_name=name, hotel_object=hotel)
-                    print(spa_reservation.generate_ticket())
+                if credit_card.pay(hotel.price):
+                    hotel.book()
+                    name = input("Enter your Name: ")
+                    reservation = ReservationTicket(customer_name=name, hotel_object=hotel)
+                    print(reservation.generate())
+                    print(f"Thanks for choosing our hotel {hotel.name}")
+                    spa = input("Do you want to book a spa package? ").lower()
+                    if spa == "yes":
+                        spa_reservation = SpaReservationTicket(customer_name=name, hotel_object=hotel)
+                        print(spa_reservation.generate_ticket())
+                else:
+                    print("Insufficient funds on the credit card.")
             else:
                 print("Credit card authentication failed.")
         else:
